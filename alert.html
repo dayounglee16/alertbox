@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>alert-box</title>
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <div class="alert-box" id="alert">
+      <p id="title">알림창임</p>
+      <button onclick="알림창('none')">X</button>
+    </div>
+    <button onclick="로그인알림창('block', '아이디를 입력하세요')">
+      버튼1
+    </button>
+    <button onclick="로그인알림창('block', '비밀번호를 입력하세요')">
+      버튼2
+    </button>
+
+    <!-- 스크립트를 html 문서 하단에 작성(위에서 한줄한줄 부터 읽는데 미리 html을 읽어놔야 조작이 가능하기 때문)-->
+    <script>
+      //function(함수) : 긴 코드를 축약하고 싶을 때 사용
+      //함수명 작명관습 : 소문자시작, camelCase작명법 사용, 띄어쓰기,-,_ 사용 안 됨
+      // 오류(Error메세지 console 탭 확인) : selector오타, 기본문법오타(대문자/소문자)
+      //getElementsByClassName 셀렉터 : 같은 클래스이름이 있을 때 인데스 번호로 불러오기 가능함 → getElementsByClassName('클래스명')[순서]
+      //getElementsByTagName 셀렉터 : 태그명으로 찾아줌
+      //getElementsByName 셀렉터  : name 속성으로 찾아줌
+
+      //파라미터 : 함수 1개로 여러가지 코드 작성
+      function 알림창(구멍) {
+        document.getElementById("alert").style.display = 구멍;
+      }
+
+      function 로그인알림창(display, name) {
+        document.getElementById("alert").style.display = display;
+        document.getElementById("title").innerHTML = name;
+      }
+
+      //예시 1
+      // function 알림창열기() {
+      //   document.getElementById("alert").style.display = "block";
+      // }
+      // function 알림창닫기() {
+      //   document.getElementById("alert").style.display = "none";
+      // }
+    </script>
+  </body>
+</html>
