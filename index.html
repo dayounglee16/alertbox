@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>alert-box 만들기</title>
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <h1 id="hello">안녕하세요</h1>
+    <h1 id="hi">안녕하세요 font-size 16px로 줄이기</h1>
+
+    <!-- (참고)
+    . getElementById()는 selector라고 . html 요소를 찾기 위해 사용합니다.
+    . innerHTML / .style / .color 이렇게 점을 앞에 찍는데 괄호없는건 메소드(또는 함수) 라고 부릅니다.
+      html 요소의 어떤 속성을 변경할지 결정하기 위해 사용합니다.  
+    -->
+
+    <script>
+      //.innerHTML - 내부 html
+      //=(등호) - 오른쪽에 있는 것을 왼쪽에 대입
+
+      //해석 - html문서의 ID가 hello인 html 요소를 안녕하세요 → 안녕으로 바꿔주세요
+      document.getElementById("hello").innerHTML = "안녕";
+      // //해석 - html문서의 ID가 hello인 html 요소('안녕')의 색상을 빨간색으로 바꿔주세요
+      document.getElementById("hello").style.color = "red";
+      // //해석 - html문서 ID가 hi인 html 요소의 font-size(16px)를 바꿔주세요
+      document.getElementById("hi").style.fontSize = "16px";
+    </script>
+  </body>
+</html>
