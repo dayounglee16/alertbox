@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>alert-addEventListner</title>
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <div class="alert-box" id="alert">
+      <p id="title">알림창임</p>
+      <button id="close">X</button>
+    </div>
+    <button onclick="로그인알림창('block', '아이디를 입력하세요')">
+      버튼1
+    </button>
+    <button onclick="로그인알림창('block', '비밀번호를 입력하세요')">
+      버튼2
+    </button>
+
+    <script>
+      //event : click, keydown, scroll, 드래그, mouseover 등
+      //event 장점 : onclick 사용 안 해도 됨
+      //event 쓰는 방법 : 셀렉터로찾은요소.addEventListener('scroll', function(){} ); → 함수 파라미터자리에 들어가는 함수를 전문용어로 '콜백함수'
+      document.getElementById("close").addEventListener("click", function () {
+        document.getElementById("alert").style.display = "none";
+      });
+
+      function 알림창(구멍) {
+        document.getElementById("alert").style.display = 구멍;
+      }
+      function 로그인알림창(display, name) {
+        document.getElementById("alert").style.display = display;
+        document.getElementById("title").innerHTML = name;
+      }
+    </script>
+  </body>
+</html>
